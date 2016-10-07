@@ -1,84 +1,28 @@
-""" Self-Driving Car: Following Distance
-    Name: 
-    Date: 
-    """
+##-------------------------------------------
+##  _____  _     _                          |
+## |  __ \(_)   | |                         |
+## | |  | |_ ___| |_ __ _ _ __   ___ ___    |
+## | |  | | / __| __/ _` | '_ \ / __/ _ \   | 
+## | |__| | \__ \ || (_| | | | | (_|  __/   |
+## |_____/|_|___/\__\__,_|_| |_|\___\___|   |
+##------------------------------------------|
+##Author: Hussain Salam | Date: 06/10/2016  |
+##-------------------------------------------
 
-# global constants
-
-VEHICLE_LENGTH = 4      # meters 
-MIN_DISTANCE = VEHICLE_LENGTH / 2
-
-# functions
-
-def get_equal_distance(dist_front, dist_rear):
-    """ Function to return target following distance, ensuring that the
-        vehicle in front and the vehicle behind are equidistant.
-        """
-    # your code goes here
-
-def get_safe_distance(curr_speed, weather):
-    """ Function to return safe following distance as per UK regulations,
-        e.g. the 2 second rule adapted to weather conditions.
-        """ 
-    # your code goes here
-
-def main():
-    """ Main function; contains various test cases for each scenario.
-        """
-    # ----------------------------------------------------------
-    # Scenario 1: Equal distance between front and rear vehicles
-    # ----------------------------------------------------------
-    
-    print("Scenario 1:")
-
-    # Test 1: (outputs 3.5)
-    distance_front = 2  # meters
-    distance_rear = 5   # meters
-
-    target_distance = get_equal_distance(distance_front, distance_rear)
-    print(target_distance)
-
-    # Test 2: (outputs 4.0)
-    distance_front = 5  # meters
-    distance_rear = 3   # meters
-
-    target_distance = get_equal_distance(distance_front, distance_rear)
-    print(target_distance)
-
-    # Test 3: (outputs 5.5)
-    distance_front = 1  # meters
-    distance_rear = 10  # meters
-
-    target_distance = get_equal_distance(distance_front, distance_rear)
-    print(target_distance)
-
-    # ----------------------------------------------------------
-    # Scenario 2: Safe following distances as per UK regulations
-    # ----------------------------------------------------------
-
-    print("Scenario 2:")
-
-    # Test 1: (outputs 2.0)
-    current_speed = 0  # mph
-    weather_condition = "normal"
-
-    target_distance = get_safe_distance(current_speed, weather_condition)
-    print(target_distance)
-
-    # Test 2: (outputs 24.0)
-    current_speed = 60  # mph
-    weather_condition = "normal"
-
-    target_distance = get_safe_distance(current_speed, weather_condition)
-    print(target_distance)
-
-    # Test 3: (outputs 48.0)
-    current_speed = 60  # mph
-    weather_condition = "poor"
-
-    target_distance = get_safe_distance(current_speed, weather_condition)
-    print(target_distance)    
-
-
-if __name__ == "__main__":
-    main()
+CAR_L = 4                                       
+DIST_1 = int(input("[SYSTEM]: Input the distance between you and the FRONT vehicle: "))
+DIST_2 = int(input("[SYSTEM]: Input the distance between you and the REAR vehicle: "))
+SPEED = int(input("[SYSTEM]: Input your current speed: "))
+WEATHER = input("[SYSTEM]: Is it raining (Y/N)")            
+MID_P = (DIST_1+DIST_2)/2
+SCEN_2 = (SPEED/10)*10
+print ("[DEBUGGER]: Midpoint is", MID_P)
+print("[SYSTEM]: You vehicle should be: ",MID_P,"away from both vehicles (SCEN1)")
+print ("[SYSTEM]: Your vehicle should be: ",SCEN_2," away from both vehicles (SCEN2)")
+if WEATHER = Y:
+    SCEN_2 = SCEN_2*2
+    print ("[SYSTEM]: Your vehicle should be: ",SCEN_2," away from both vehicles (SCEN3)")
+elif WEATHER = N:
+    print ("[SYSTEM]: Your vehicle should be: ",SCEN_2," away from both vehicles (SCEN3)")
+else:
+    print("[ERROR]: Unrecognized Syntax, Contact Author.")
